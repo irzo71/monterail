@@ -1,0 +1,194 @@
+/*                                                              
+oo                                                dP                    dP  oo          
+                                                  88                    88              
+dP  88d888b.  d888888b  .d8888b.      .d8888b.  d8888P  dP    dP  .d888b88  dP  .d8888b. 
+88  88'  `88     .d8P'  88'  `88      Y8ooooo.    88    88    88  88'  `88  88  88'  `88 
+88  88         .Y8P     88.  .88  dP        88    88    88.  .88  88.  .88  88  88.  .88 
+dP  dP        d888888P  `88888P'  88  `88888P'    dP    `88888P'  `88888P8  dP  `88888P' 
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+                                  ____    ___   _  _____ 
+                                 |___ \  / _ \ / ||___  |
+                                   __) || | | || |   / / 
+                                  / __/ | |_| || |  / /  
+                                 |_____| \___/ |_| /_/   
+                                    www.irzo.studio
+                                    www.irzyk.pl
+                                    */
+//============================================================                              
+$icon-font-path: '/assets/fonts/';
+@import "bootstrap";
+@import url('https://www.fontify.me/wf/c650435094bd11d86c68589579e17e3f');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+	font-family: font74070;
+}
+$que-gray: #a7a9ac;
+$que-darker-gray: #7d8b98;
+$que-link: #0266b3;
+$que-skyblue: #dff3fd;
+$que-lightblue: #e5f5fd;
+
+@mixin size($size-width, $size-height){
+	width: $size-width;
+	height: $size-height;
+}
+//============================================================
+// Avatar
+.avatar{ 
+	img{
+		margin: 0 0 0 20px;
+		border-radius: 50px;
+		width: 50px;
+		height: 50px;
+    cursor: pointer;
+		@media (max-width: $screen-xs-max) {    
+			width: 35px;
+			height: 35px
+		}
+	}
+}
+
+//============================================================
+// Voting module
+
+$arrow-size: 5px;
+.number-of-votes{
+  text-align: right;
+  padding-right: 10px;
+  margin-top: 4*$arrow-size;
+  color: black;
+  font-weight: bold;
+  width: calc(100% - 30px);
+  float: left;
+}
+.votes{
+ float: right;
+ width: 20px;
+ margin-right: 10px;
+
+.upvote {
+          position: relative;
+          padding: 1em;
+          cursor: pointer;
+
+          &:after {
+            content: "";
+            width: 0; 
+            height: 0; 
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            border-left: $arrow-size solid transparent;
+            border-right: $arrow-size solid transparent;
+            border-bottom: 2*$arrow-size solid $que-link;
+          }
+        }
+
+        .downvote {
+          position: relative;
+          padding: 1em;
+          cursor: pointer;
+
+          &:after {
+            content: "";
+            width: 0; 
+            height: 0; 
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            border-left: $arrow-size solid transparent;
+            border-right: $arrow-size solid transparent;
+            border-top: 2*$arrow-size solid $que-link;
+          }
+          }
+          }
+
+
+//============================================================
+//Content
+#content{
+	.container{
+		background: #fbfbfb;
+		color: $que-gray;
+
+		.inner{
+			@extend 
+			.col-xs-12, .col-xs-offset-0,
+			.col-sm-12, .col-sm-offset-0,
+			.col-md-12, .col-md-offset-0, 
+			.col-lg-8,  .col-lg-offset-2;
+		}
+	}
+ //============================================================
+//LIST display
+ul#single-qustion{
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 0;
+
+
+	& > li{
+		@extend .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12;
+		background: white;
+		border-bottom: 1px solid #e5e5e5;
+		box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.1);
+		padding: 0;
+
+
+		.activities > .activitie,
+		.activities aside{
+			@extend 
+			.col-xs-6, 
+			.col-sm-2, 
+			.col-md-2, 
+			.col-lg-2;
+			min-width:90px!important;
+			max-width:100px!important;
+			text-align: center;
+		}
+
+		.activities{
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 0 40px 0;
+			height: 190px;
+			overflow: hidden;
+
+
+  //aside - who wrote that?
+  aside{
+  	@extend 
+  	.hidden-xs;
+  	div{
+  		position: relative;
+  		height:185px;
+  		margin-right: 10px;
+  		background: $que-skyblue;
+  	}
+  }
+
+
+}
+}
+
+.stats{
+	color: black;
+	font-weight: bold;
+	max-width:200px!important;
+	ul{
+		margin: 0;
+		list-style-type: none;
+		li{
+			padding: 25px 20px;
+		}
+	}
+}
+}
+}
